@@ -1,0 +1,33 @@
+<!-- <form [formGroup]="actionForm" (ngSubmit)="addAction()">
+    <div class="md-form">
+        <input mdbInputDirective id="form4" class="form-control" data-error="wrong number" data-success="right number" formControlName="username">
+        <label for="form4">username:</label>
+    </div>
+</form>
+
+<form [formGroup]="actionForm">
+    <div class="md-form">
+        <input mdbInputDirective type="text" id="form2" class="form-control" data-error="wrong text" data-success="right text" formControlName="username">
+        <label for="form2">minLength validator</label>
+    </div>
+</form> -->
+<div class="form">
+  <form [formGroup]="actionForm" (ngSubmit)="addAction()">
+
+    <mat-form-field>
+      <input matInput placeholder="Username" formControlName="username">
+    </mat-form-field>
+
+    <br/> value:
+    <mat-slider formControlName="value" thumbLabel max="100" min="0" value="0"></mat-slider>
+    
+    <br/>
+    <mat-form-field>
+        <input matInput placeholder="Message" formControlName="message">
+      </mat-form-field>
+
+    <br/>
+    <button type="submit" class="btn btn-outline-dark" [disabled]="!actionForm.valid">Add</button>
+  </form>
+
+</div>
